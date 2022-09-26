@@ -10,12 +10,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './appPages/home/home.component';
 import { CommonModuleModule } from './common-module/common-module.module';
 
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,10 @@ import { CommonModuleModule } from './common-module/common-module.module';
     BrowserAnimationsModule,
     CommonModuleModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatCheckboxModule
   
   ],
   providers: [],

@@ -15,7 +15,8 @@ const allmodule:any=[
   MatButtonModule,
   MatCardModule,
   MatToolbarModule,
-  MatIconModule
+  MatIconModule,
+  
 ];
 
 @NgModule({
