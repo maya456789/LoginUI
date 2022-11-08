@@ -13,13 +13,24 @@ import { CommonModuleModule } from './common-module/common-module.module';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSelectModule} from '@angular/material/select';
+import { MyCartComponent } from './my-cart/my-cart.component';
+import { MyProductComponent } from './my-product/my-product.component';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent, DialogContentExampleDialog } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
+    MyCartComponent,
+    MyProductComponent,
+    DialogComponent,
+    DialogContentExampleDialog
     
   ],
   imports: [
@@ -31,10 +42,16 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     FormsModule,
     MatPaginatorModule,
     MatTableModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSelectModule,
+    MatListModule,
+    MatSidenavModule,
+    MatDialogModule,
+    MatCardModule
   
   ],
   providers: [],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

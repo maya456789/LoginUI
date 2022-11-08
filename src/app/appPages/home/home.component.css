@@ -14,3 +14,21 @@ table {
   .example-spacer {
     flex: 1 1 auto;
   }
+
+  .example-container {
+    width: 1000px;
+    height: 700px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin-left: 20px;
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 10px;
+  }

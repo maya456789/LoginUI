@@ -3,7 +3,6 @@ import {SelectionModel} from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import {ChangeDetectorRef } from '@angular/core';
-import {MatToolbarModule} from '@angular/material/toolbar';
 
 export interface PeriodicElement {
   name: string;
@@ -26,13 +25,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-my-product',
+  templateUrl: './my-product.component.html',
+  styleUrls: ['./my-product.component.css']
 })
-export class HomeComponent   {
-
-  showFiller = false;
+export class MyProductComponent implements OnInit {
 
   @ViewChild('paginator')
   paginator!: MatPaginator;
@@ -40,8 +37,7 @@ export class HomeComponent   {
   dataSource!: MatTableDataSource<PeriodicElement>;
   selection = new SelectionModel<PeriodicElement>(true, []);
 
-  public product:Array<any>=[{p_id:1,p_no:101,p_name:'p1'},{p_id:2,p_no:101,p_name:'p1'},{p_id:3,p_no:101,p_name:'p1'},{p_id:4,p_no:101,p_name:'p1'},{p_id:5,p_no:101,p_name:'p1'},{p_id:6,p_no:101,p_name:'p1'}]
-  constructor( private cdref: ChangeDetectorRef) { }
+  constructor(private cdref: ChangeDetectorRef) { }
 
   ngAfterViewInit(){
   
@@ -57,19 +53,18 @@ export class HomeComponent   {
    
   }
   
-  
-  //Filter start
-  applyFilter(event: Event) {
+
+  ngOnInit(): void {
+  }
+
+   //Filter start
+   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   //Filter End
 
-  
-
- 
-
-  //Checkbox start
+   //Checkbox start
    /** Whether the number of selected elements matches the total number of rows. */
    isAllSelected() {
     const numSelected = this.selection.selected.length;
@@ -100,8 +95,4 @@ export class HomeComponent   {
   }
   //checkbox End
 
-  onLogout(){
-    window.sessionStorage.clear();
-    window.location.href='';
-  }
 }
