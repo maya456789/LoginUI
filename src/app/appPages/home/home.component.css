@@ -17,7 +17,7 @@ table {
 
   .example-container {
     width: 1000px;
-    height: 700px;
+    height: 600px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     margin-left: 20px;
   }
@@ -31,4 +31,15 @@ table {
   
   .example-sidenav {
     padding: 10px;
+  }
+
+  .side{
+    background-color: purple;
+    color: white;
+    margin-top: 62px;
+  }
+
+  mat-nav-list,a:hover{
+    color: white;
+    
   }
