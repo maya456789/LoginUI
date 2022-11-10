@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   public obj:any;
   
 
-  constructor(private fbuild:FormBuilder) {
+  constructor(private fbuild:FormBuilder,private rout:Router) {
 
     this.formData=this.fbuild.group({
       userName:['',Validators.compose([Validators.required,Validators.minLength(5)])],
@@ -42,7 +43,8 @@ export class LoginComponent implements OnInit {
       let obj={uname:this.uname,pass:this.pass};
       sessionStorage.setItem("userDetails",JSON.stringify(obj));
      // localStorage.setItem("data","User Data");
-      window.location.href='home';
+     // window.location.href='home';
+     this.rout.navigate(["home"]);
     }
     else{
       alert('Login failed');
