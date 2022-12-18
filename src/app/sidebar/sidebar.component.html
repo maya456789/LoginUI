@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar  class="header">Menu</mat-toolbar>
+    <mat-nav-list >
+
+      <a mat-list-item [routerLink]="'my-cart'"><span class="material-icons md-36">image</span> Card List </a>
+     <a mat-list-item [routerLink]="'my-product'"><span class="material-icons md-36">
+       navigate_next
+       </span> Table List </a>
+     <a mat-list-item [routerLink]="'dialog'"><span class="material-icons md-36">auto_awesome</span> Dialogs </a>
+     <a mat-list-item [routerLink]="'/create-contact'"><span class="material-icons md-36">contacts</span> Create Contact </a>
+     <a mat-list-item [routerLink]="'/activities'"><span class="material-icons md-36">add_business</span> Activities </a>
+     <a mat-list-item [routerLink]="'/create-activity'"><span class="material-icons md-36">storefront</span> Create Activity </a>
+
+
+   </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon" >menu</mat-icon>
+      </button>
+      <span>matApp</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button title="Logout" (click)="onLogout()" class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet> </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

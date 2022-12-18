@@ -5,14 +5,18 @@ import { LoginComponent } from './appPages/login/login.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { MyCartComponent } from './my-cart/my-cart.component';
 import { MyProductComponent } from './my-product/my-product.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
-  {path:'home',component:HomeComponent,children:[
+  {path:'home',component:HomeComponent},
+
+  {path:'sidebar',component:SidebarComponent,children:[
     {path:'my-cart',component:MyCartComponent},
     {path:'my-product',component:MyProductComponent},
     {path:'dialog',component:DialogComponent}
   ]}
+
 ];
 
 @NgModule({

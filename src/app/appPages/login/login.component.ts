@@ -12,24 +12,26 @@ export class LoginComponent implements OnInit {
 
   public formData:FormGroup;
   public isFormSubmitted:boolean=false;
+  public v1:string="admin";
+  public v2:any="admin123";
   public uname:any;
   public pass:any;
   public obj:any;
-  
+
 
   constructor(private fbuild:FormBuilder,private rout:Router) {
 
     this.formData=this.fbuild.group({
       userName:['',Validators.compose([Validators.required,Validators.minLength(5)])],
       userPass:['',Validators.compose([Validators.required,Validators.maxLength(8)])],
-    
+
     });
    }
-  
+
   ngOnInit(): void {
   }
 
- 
+
   checkUser(formData:any){
     this.isFormSubmitted=true;
     console.log(formData);
@@ -44,7 +46,7 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem("userDetails",JSON.stringify(obj));
      // localStorage.setItem("data","User Data");
      // window.location.href='home';
-     this.rout.navigate(["home"]);
+     this.rout.navigate(["sidebar"]);
     }
     else{
       alert('Login failed');

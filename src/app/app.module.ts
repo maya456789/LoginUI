@@ -21,6 +21,11 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent, DialogContentExampleDialog } from './dialog/dialog.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,8 @@ import { DialogComponent, DialogContentExampleDialog } from './dialog/dialog.com
     MyCartComponent,
     MyProductComponent,
     DialogComponent,
-    DialogContentExampleDialog
+    DialogContentExampleDialog,
+    SidebarComponent
     
   ],
   imports: [
@@ -47,7 +53,11 @@ import { DialogComponent, DialogContentExampleDialog } from './dialog/dialog.com
     MatListModule,
     MatSidenavModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule
   
   ],
   providers: [],

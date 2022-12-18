@@ -1,0 +1,32 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: rgb(78, 101, 193);
+}
+
+mat-nav-list,a:hover{
+  color: white;
+
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 30px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.head{
+ margin: 30px;
+}
